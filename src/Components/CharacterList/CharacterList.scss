@@ -1,0 +1,17 @@
+@import "../../Assets/style/colors.scss";
+
+.Gryffindor-card {
+    @include house-colors("gryffindor");
+}
+
+.Slytherin-card {
+    @include house-colors("slytherin");
+}
+
+.Ravenclaw-card {
+    @include house-colors("ravenclaw");
+}
+
+.Hufflepuff-card {
+    @include house-colors("hufflepuff");
+}

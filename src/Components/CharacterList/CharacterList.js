@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "./CharacterList.scss";
+
 const CharactersList = () => {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -40,7 +42,9 @@ const CharactersList = () => {
             <h1>Lista de Personagens</h1>
             <ul>
                 {characters.map((character, index) => (
-                    <li key={index}>{character.name}</li>
+                    <li key={index} className={`${character.house}-card`}>
+                        {character.name}
+                    </li>
                 ))}
             </ul>
             {loading && <p>Carregando...</p>}

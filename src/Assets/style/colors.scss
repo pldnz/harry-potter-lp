@@ -1,0 +1,28 @@
+// Definição das cores das casas
+$gryffindor-primary: #7f0909;
+$gryffindor-secondary: #ffc500;
+$slytherin-primary: #1a472a;
+$slytherin-secondary: #aaaaaa;
+$ravenclaw-primary: #0e1a40;
+$ravenclaw-secondary: #946b2d;
+$hufflepuff-primary: #ffdb00;
+$hufflepuff-secondary: #000000;
+
+// Mixin para aplicar as cores de uma casa
+@mixin house-colors($house) {
+    @if $house == "gryffindor" {
+        background-color: $gryffindor-primary;
+        color: $gryffindor-secondary;
+    } @else if $house == "slytherin" {
+        background-color: $slytherin-primary;
+        color: $slytherin-secondary;
+    } @else if $house == "ravenclaw" {
+        background-color: $ravenclaw-primary;
+        color: $ravenclaw-secondary;
+    } @else if $house == "hufflepuff" {
+        background-color: $hufflepuff-primary;
+        color: $hufflepuff-secondary;
+    } @else {
+        @error 'Casa desconhecida. Use: gryffindor, slytherin, ravenclaw ou hufflepuff.';
+    }
+}

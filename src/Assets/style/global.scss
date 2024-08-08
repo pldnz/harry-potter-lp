@@ -1,0 +1,9 @@
+body {
+    background: url("../img/bg-desktop.jpg") no-repeat center center fixed;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: url("../img/bg-mobile.jpg") no-repeat center center fixed;
+    }
+}
