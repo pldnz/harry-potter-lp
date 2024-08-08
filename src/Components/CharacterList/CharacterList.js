@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import "./CharacterList.scss";
+import Limit from "../Generics/Limit/Limit";
 
 const CharactersList = () => {
     const [characters, setCharacters] = useState([]);
@@ -39,18 +40,20 @@ const CharactersList = () => {
 
     return (
         <div>
-            <h1>Lista de Personagens</h1>
-            <ul>
-                {characters.map((character, index) => (
-                    <li key={index} className={`${character.house}-card`}>
-                        {character.name}
-                    </li>
-                ))}
-            </ul>
-            {loading && <p>Carregando...</p>}
-            {!loading && offset < 300 && (
-                <button onClick={fetchCharacters}>Carregar Mais</button>
-            )}
+            <Limit>
+                <h1>Lista de Personagens</h1>
+                <ul>
+                    {characters.map((character, index) => (
+                        <li key={index} className={`${character.house}-card`}>
+                            {character.name}
+                        </li>
+                    ))}
+                </ul>
+                {loading && <p>Carregando...</p>}
+                {!loading && offset < 300 && (
+                    <button onClick={fetchCharacters}>Carregar Mais</button>
+                )}
+            </Limit>
         </div>
     );
 };
