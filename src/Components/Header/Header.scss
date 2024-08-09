@@ -9,6 +9,7 @@
 
         a {
             display: flex;
+            flex-wrap: wrap;
             margin-top: 20px;
             margin-bottom: 20px;
 
@@ -21,7 +22,7 @@
             img {
                 display: block;
                 object-fit: contain;
-                width: fit-content;
+                max-width: 100%;
             }
         }
     }

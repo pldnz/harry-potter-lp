@@ -60,7 +60,12 @@ const CharactersList = () => {
                 </ul>
                 {loading && <p>Carregando...</p>}
                 {!loading && offset < 300 && (
-                    <button onClick={fetchCharacters}>Carregar Mais</button>
+                    <button
+                        aria-label="show more characters"
+                        onClick={fetchCharacters}
+                    >
+                        Show More
+                    </button>
                 )}
             </Limit>
         </div>
