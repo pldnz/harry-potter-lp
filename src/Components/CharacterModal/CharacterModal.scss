@@ -1,16 +1,27 @@
 @import "../../Assets/style/colors.scss";
 
-.character-card {
+.character-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.character-modal-card {
+    max-width: 600px;
+    width: 100%;
     background-color: #b19c65;
     color: #08172f;
     padding: 8px;
     border: 2px solid #b19c65;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.05);
-        transition: transform 0.4s ease-in-out;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     picture {
         display: block;
@@ -30,7 +41,7 @@
     }
 
     figcaption {
-        padding: 12px 6px;
+        padding: 20px;
 
         h2 {
             margin-bottom: 8px;
