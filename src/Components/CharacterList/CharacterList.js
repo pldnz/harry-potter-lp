@@ -3,15 +3,16 @@ import axios from "axios";
 
 import "./CharacterList.scss";
 import Limit from "../Generics/Limit/Limit";
+import CharacterCard from "../CharacterCard/CharacterCard";
 
 const CharactersList = () => {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(false);
     const [offset, setOffset] = useState(0);
-    const limit = 10;
+    const limit = 8;
 
     useEffect(() => {
-        // Carrega os primeiros 10 itens ao montar o componente
+        // Carrega os primeiros 8 itens ao montar o componente
         fetchCharacters();
     }, []);
 
@@ -21,7 +22,7 @@ const CharactersList = () => {
             const response = await axios.get(
                 `https://hp-api.onrender.com/api/characters`
             );
-            // Adiciona os próximos 10 personagens
+            // Adiciona os próximos 8 personagens
             const newCharacters = response.data.slice(offset, offset + limit);
             setCharacters((prevCharacters) => [
                 ...prevCharacters,
@@ -39,13 +40,21 @@ const CharactersList = () => {
     }, [characters]);
 
     return (
-        <div>
-            <Limit>
-                <h1>Lista de Personagens</h1>
+        <div className="character-list">
+            <Limit styles={"character-list-limit"}>
+                <h1 className="character-list-title">
+                    Harry Potter Characters
+                </h1>
+
+                <p className="character-list-subtitle">
+                    Learn more about the main characters of this amazing
+                    franchise.
+                </p>
+
                 <ul>
                     {characters.map((character, index) => (
-                        <li key={index} className={`${character.house}-card`}>
-                            {character.name}
+                        <li key={index}>
+                            <CharacterCard character={character} />
                         </li>
                     ))}
                 </ul>
