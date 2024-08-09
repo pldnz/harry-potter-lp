@@ -35,10 +35,6 @@ const CharactersList = () => {
         setLoading(false);
     };
 
-    useEffect(() => {
-        console.log(characters);
-    }, [characters]);
-
     return (
         <div className="character-list">
             <Limit styles={"character-list-limit"}>
@@ -58,7 +54,11 @@ const CharactersList = () => {
                         </li>
                     ))}
                 </ul>
-                {loading && <p>Carregando...</p>}
+                {loading && (
+                    <span className="loading cinzel-decorative-bold">
+                        Carregando...
+                    </span>
+                )}
                 {!loading && offset < 300 && (
                     <button
                         aria-label="show more characters"
