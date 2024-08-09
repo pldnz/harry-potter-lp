@@ -11,6 +11,7 @@ const Footer = () => {
                     <a
                         href="https://www.linkedin.com/in/pldnz/"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         Paulo Diniz - 2024
                     </a>
